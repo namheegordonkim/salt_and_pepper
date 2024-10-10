@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Run the code
 
-Run `enjoycem.py` to check that the interactive visualizer runs correctly.
+Run `enjoy_cem.py` to check that the interactive visualizer runs correctly.
 
 ```bash
 python enjoy_cem.py

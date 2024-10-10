@@ -88,12 +88,7 @@ class BaseLearner(Learner):
         self.weights = np.zeros_like(self.rewards)
 
     def weigh(self, elite_proportion: float = 0.5):
-        """
-        Computes weight for samples.
-        For CEM, we'll use the top 5 samples.
-        The weight for the top 5 are set to 1, and the rest are set to 0.
-        """
-        # Cross-entropy weighting
+        # Elite selection weighting
         reward_argsort = np.argsort(self.rewards)
         self.weights = np.zeros_like(self.rewards)
         self.weights[
@@ -207,11 +202,6 @@ class ContextualLearner(BaseLearner):
         self.weights = None
 
     def weigh(self, elite_proportion: float = 0.5):
-        """
-        Computes weight for samples.
-        For CEM, we'll use the top 5 samples.
-        The weight for the top 5 are set to 1, and the rest are set to 0.
-        """
         # Cross-entropy weighting
         reward_argsort = np.argsort(self.rewards)
         self.weights = np.zeros_like(self.rewards)
